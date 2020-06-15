@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href='dist/layui/css/layui.css'/>
+<span class="layui-breadcrumb">
+				<a href="/">首页</a>
+				<a href="/demo/">演示</a>
+				<a><cite>导航元素</cite></a>
+			</span>
+</body>
+<script src="dist/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="dist/layui/layui.js"></script>
+
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+</html>
