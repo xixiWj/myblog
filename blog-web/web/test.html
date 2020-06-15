@@ -16,13 +16,21 @@
 <script type="text/javascript" src="dist/layui/layui.js"></script>
 
 <script>
-    layui.use('element', function(){
-        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-        //监听导航点击
-        element.on('nav(demo)', function(elem){
-            //console.log(elem)
-            layer.msg(elem.text());
-        });
-    });
+    var obj = [{a:3},{a:1},{a:5},{a:2},{a:6},{a:4}];
+
+	for (var i = 0 ;i<obj.length ;i++){
+	    for (var j = i+1 ;j<obj.length ;j++ ){
+	        if(obj[j].a > obj[i].a){
+				var  temp = obj[i];
+				obj[i]  = obj[j];
+				obj[j] = temp;
+			}
+		}
+	}
+
+	console.log(obj)
+
+
+
 </script>
 </html>
